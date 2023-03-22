@@ -7,6 +7,7 @@ import java.net.URL;
 public class FileUtils {
 
     public static File getFileFromResource(String fileName) throws URISyntaxException {
+
         ClassLoader classLoader = FileUtils.class.getClassLoader();
         URL resource = classLoader.getResource(fileName);
         if (resource == null) {
