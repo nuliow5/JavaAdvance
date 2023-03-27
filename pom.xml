@@ -13,6 +13,7 @@
     <module>jackson-json</module>
       <module>OkHttp-json</module>
       <module>Junit-test</module>
+      <module>task-payments</module>
   </modules>
 
   <properties>
