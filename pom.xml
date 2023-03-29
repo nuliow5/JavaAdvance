@@ -16,6 +16,7 @@
         <module>task-payments</module>
         <module>inner-class</module>
         <module>design-patterns</module>
+        <module>lambdas-streams</module>
     </modules>
 
     <properties>
