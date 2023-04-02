@@ -1,41 +1,24 @@
 package eu.codeacademy.firstLesson.task;
 
+import eu.codeacademy.firstLesson.taskStream.FavoriteSubjec;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.Random;
 import java.util.StringJoiner;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Student {
     private String name;
     private String surname;
     private int course;
-
-    public Student(String name, String surname, int course) {
-        this.name = name;
-        this.surname = surname;
-        this.course = course;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getCourse() {
-        return course;
-    }
-
-    public void setCourse(int course) {
-        this.course = course;
-    }
+    private Gender gender;
+    private FavoriteSubjec favoriteSubjec;
 
     @Override
     public String toString() {
@@ -43,6 +26,13 @@ public class Student {
                 .add("name='" + name + "'")
                 .add("surname='" + surname + "'")
                 .add("course=" + course)
+                .add("gender=" + gender)
+                .add("favoriteSubjec=" + favoriteSubjec)
                 .toString();
+    }
+
+    public int averageGrade(){
+        Random random = new Random(10);
+        return random.nextInt(10)+1;
     }
 }

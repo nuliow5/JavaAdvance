@@ -1,10 +1,11 @@
 package eu.codeacademy.firstLesson.taskStream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import eu.codeacademy.firstLesson.task.Gender;
+import eu.codeacademy.firstLesson.task.Student;
+
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,9 +45,9 @@ public class Main {
 
         //2. Surasti, kiek yra elementu, kuriu ilgis daugiau uz 3
         Long countyLength =
-            strList.stream()
-                    .filter((word) -> word.length() > 3)
-                    .count();
+                strList.stream()
+                        .filter((word) -> word.length() > 3)
+                        .count();
 
         System.out.println("countyLength = " + countyLength);
 
@@ -107,8 +108,43 @@ public class Main {
 
         System.out.println("sortedList = " + sortedListReverse);
 
+        //panaudojant map surinkti visu studentu kursus i sveiku skaiciu masyva ir isspausdinti
 
+        List<Student> studentList = new ArrayList<>(Arrays.asList(
+                new Student("Vadimas", "Bbbb", 3, Gender.MALE, FavoriteSubjec.MATH),
+                new Student("Loreta", "Dddd", 15, Gender.FEMALE, FavoriteSubjec.MATH)
+        ));
 
+        List<Integer> courses = studentList.stream()
+                .map(student -> student.getCourse())
+                .collect(Collectors.toList());
+
+        //With Maps
+        Map<Gender, String> maps =
+                studentList.stream()
+                        .collect(Collectors.toMap(Student::getGender, Student::getName));
+        System.out.println("map = " + maps);
+
+//        Map<Gender, List<Student>> studentsByGender =
+//                studentList.stream()
+//                        .collect(Collectors.toMap(Student::getGender, );
+
+        //Studentu rusiavimas
+        studentList
+                .stream()
+                .sorted(Comparator.comparing(Student::getCourse))
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+        //Studentu rusiavimas atvirksciai
+        studentList
+                .stream()
+                .sorted(Comparator.comparing(Student::getCourse).reversed())
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+        studentList
+                .stream()
+                .filter(stud -> stud.getCourse() == 2)
+                .count();
 
 
     }

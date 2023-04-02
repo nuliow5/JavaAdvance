@@ -33,19 +33,26 @@ public class SortSecondTask {
         System.out.println("evenNumbersGreaterThanFive = " + evenNumbersGreaterThanFive);
 
 //        4. surasti didziausia/maziausia skaicius
-       Integer findMinMax =
+        Integer findMin =
                 numbers.stream()
 //                        .collect(new HashMap<>().put("max", numbers.stream().max(Comparator.comparing(Integer::valueOf)).get());
                         .min(Comparator.comparing(Integer::valueOf)).get();
 
-        System.out.println("findMinMax = " + findMinMax);
-
-
-
-
-
+        System.out.println("findMinMax = " + findMin);
 
 
 //        5. is List<Integer> paversti i List<String> kuris prie kiekvieno elemento pridetu zodi Number (Number 9, Number 10, Number 3)
+
+        List<String> convertToStringList =
+                (List<String>) numbers.stream()
+                        .map(value -> "Number " + value)
+                        .collect(Collectors.toList());
+        System.out.println("convertToStringList = " + convertToStringList);
+
+
+        //*Su HashMap surasti didziausia/maziausia skaicius
+//        Map<String, Integer> maxMin =
+//                numbers.stream()
+//                        .collect(Collectors.toMap())
     }
 }
