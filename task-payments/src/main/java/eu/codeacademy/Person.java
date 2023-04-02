@@ -38,6 +38,16 @@ public class Person {
                 .toString();
     }
 
+    public String toJson() {
+        return new StringJoiner("", Person.class.getSimpleName() + "{", "}")
+                .add("\n     \"id\":"              + "\"" + id + "\",\n" )
+                .add("     \"firstName\":"       + "\"" + firstName + "\",\n" )
+                .add("     \"lastName\":"        + "\"" + lastName + "\",\n" )
+                .add("     \"receivedMoney\":"   + "\"" + receivedMoney + "\",\n" )
+                .add("     \"sentMoney\":"       + "\"" + sentMoney + "\"\n" )
+                .toString();
+    }
+
     public int getReceivedMoney() {
         return receivedMoney;
     }

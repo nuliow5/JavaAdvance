@@ -2,8 +2,7 @@ package eu.codeacademy;
 
 import eu.codeacademy.service.PeopleService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -17,5 +16,9 @@ public class App {
         peopleService.payment(personMap);
         peopleService.printAllPeopleMap((HashMap<String, Person>) personMap);
 
+        peopleService.writeToFieBySendMoney(personMap);
+
+        //-----------write to file from concertinted Map to list
+        peopleService.writeToFieBySendMoneyUsingList(peopleService.convertMapToList(personMap));
     }
 }
