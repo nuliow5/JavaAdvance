@@ -17,6 +17,7 @@
         <module>inner-class</module>
         <module>design-patterns</module>
         <module>lambdas-streams</module>
+        <module>generic-types</module>
     </modules>
 
     <properties>

@@ -1,280 +1,40 @@
-3544=Person{
-     "id":"3544",
-     "firstName":"Kimberly",
-     "lastName":"Mullins",
-"receivedMoney":"26219",
-     "sentMoney":"20675",
-}
-3012=Person{
-     "id":"3012",
-     "firstName":"Adam",
-     "lastName":"Grant",
-"receivedMoney":"22894",
-     "sentMoney":"21496",
-}
-1824=Person{
-     "id":"1824",
-     "firstName":"Kurtis",
-     "lastName":"Head",
-"receivedMoney":"25498",
-     "sentMoney":"23140",
-}
-4580=Person{
-     "id":"4580",
-     "firstName":"Toby",
-     "lastName":"Fernando",
-"receivedMoney":"22770",
-     "sentMoney":"23323",
-}
-2682=Person{
-     "id":"2682",
-     "firstName":"Jaime",
-     "lastName":"Earline",
-"receivedMoney":"30615",
-     "sentMoney":"23715",
-}
-3958=Person{
-     "id":"3958",
-     "firstName":"Elba",
-     "lastName":"Kaufman",
-"receivedMoney":"22764",
-     "sentMoney":"23778",
-}
-2426=Person{
-     "id":"2426",
-     "firstName":"Nellie",
-     "lastName":"Brady",
-"receivedMoney":"31208",
-     "sentMoney":"24002",
-}
-3547=Person{
-     "id":"3547",
-     "firstName":"Robin",
-     "lastName":"Olsen",
-"receivedMoney":"30085",
-     "sentMoney":"24432",
-}
-1625=Person{
-     "id":"1625",
-     "firstName":"Callie",
-     "lastName":"Hawkins",
-"receivedMoney":"28685",
-     "sentMoney":"24730",
-}
-2146=Person{
-     "id":"2146",
-     "firstName":"Ezra",
-     "lastName":"Sparks",
-"receivedMoney":"33555",
-     "sentMoney":"24733",
-}
-2755=Person{
-     "id":"2755",
-     "firstName":"Reba",
-     "lastName":"Kendrick",
-"receivedMoney":"24268",
-     "sentMoney":"25277",
-}
-2254=Person{
-     "id":"2254",
-     "firstName":"Leila",
-     "lastName":"Effie",
-"receivedMoney":"24108",
-     "sentMoney":"25341",
-}
-1567=Person{
-     "id":"1567",
-     "firstName":"Shannon",
-     "lastName":"Banks",
-"receivedMoney":"29726",
-     "sentMoney":"25382",
-}
-2941=Person{
-     "id":"2941",
-     "firstName":"Heath",
-     "lastName":"Brian",
-"receivedMoney":"24900",
-     "sentMoney":"25576",
-}
-2096=Person{
-     "id":"2096",
-     "firstName":"Lloyd",
-     "lastName":"Chuck",
-"receivedMoney":"29987",
-     "sentMoney":"25638",
-}
-2895=Person{
-     "id":"2895",
-     "firstName":"Patrica",
-     "lastName":"Garrison",
-"receivedMoney":"31764",
-     "sentMoney":"26090",
-}
-2389=Person{
-     "id":"2389",
-     "firstName":"Rose",
-     "lastName":"Buckley",
-"receivedMoney":"29653",
-     "sentMoney":"26157",
-}
-3929=Person{
-     "id":"3929",
-     "firstName":"Jami",
-     "lastName":"Berger",
-"receivedMoney":"22124",
-     "sentMoney":"26185",
-}
-2303=Person{
-     "id":"2303",
-     "firstName":"Sam",
-     "lastName":"Quentin",
-"receivedMoney":"28325",
-     "sentMoney":"26401",
-}
-4539=Person{
-     "id":"4539",
-     "firstName":"Gilbert",
-     "lastName":"Weiss",
-"receivedMoney":"23069",
-     "sentMoney":"26555",
-}
-3066=Person{
-     "id":"3066",
-     "firstName":"Cleo",
-     "lastName":"Barnes",
-"receivedMoney":"23209",
-     "sentMoney":"26577",
-}
-2401=Person{
-     "id":"2401",
-     "firstName":"Elvin",
-     "lastName":"Claude",
-"receivedMoney":"29276",
-     "sentMoney":"26723",
-}
-3095=Person{
-     "id":"3095",
-     "firstName":"Rich",
-     "lastName":"Shields",
-"receivedMoney":"30223",
-     "sentMoney":"26820",
-}
-2383=Person{
-     "id":"2383",
-     "firstName":"Winnie",
-     "lastName":"Page",
-"receivedMoney":"27775",
-     "sentMoney":"27183",
-}
-1089=Person{
-     "id":"1089",
-     "firstName":"Ladonna",
-     "lastName":"Payne",
-"receivedMoney":"22431",
-     "sentMoney":"27398",
-}
-2217=Person{
-     "id":"2217",
-     "firstName":"Ruben",
-     "lastName":"Katheryn",
-"receivedMoney":"21585",
-     "sentMoney":"27452",
-}
-1307=Person{
-     "id":"1307",
-     "firstName":"Andrea",
-     "lastName":"Pate",
-"receivedMoney":"21744",
-     "sentMoney":"27817",
-}
-1538=Person{
-     "id":"1538",
-     "firstName":"Edgar",
-     "lastName":"Moises",
-"receivedMoney":"25454",
-     "sentMoney":"27953",
-}
-2342=Person{
-     "id":"2342",
-     "firstName":"Liz",
-     "lastName":"Austin",
-"receivedMoney":"28425",
-     "sentMoney":"27985",
-}
-4150=Person{
-     "id":"4150",
-     "firstName":"Angelina",
-     "lastName":"Sims",
-"receivedMoney":"27929",
-     "sentMoney":"28022",
-}
-2948=Person{
-     "id":"2948",
-     "firstName":"Johnathan",
-     "lastName":"Baxter",
-"receivedMoney":"25181",
-     "sentMoney":"28118",
-}
-2561=Person{
-     "id":"2561",
-     "firstName":"Antoine",
-     "lastName":"Derek",
-"receivedMoney":"24173",
-     "sentMoney":"28368",
-}
-2070=Person{
-     "id":"2070",
-     "firstName":"Edmund",
-     "lastName":"Mosley",
-"receivedMoney":"26798",
-     "sentMoney":"28449",
-}
-1699=Person{
-     "id":"1699",
-     "firstName":"Kathie",
-     "lastName":"Stanton",
-"receivedMoney":"23538",
-     "sentMoney":"28528",
-}
-3112=Person{
-     "id":"3112",
-     "firstName":"Summer",
-     "lastName":"Evelyn",
-"receivedMoney":"23887",
-     "sentMoney":"29343",
-}
-1968=Person{
-     "id":"1968",
-     "firstName":"Dianne",
-     "lastName":"Michael",
-"receivedMoney":"30102",
-     "sentMoney":"30168",
-}
-2811=Person{
-     "id":"2811",
-     "firstName":"Florence",
-     "lastName":"Deirdre",
-"receivedMoney":"30238",
-     "sentMoney":"30737",
-}
-3903=Person{
-     "id":"3903",
-     "firstName":"Ann",
-     "lastName":"Dunlap",
-"receivedMoney":"25299",
-     "sentMoney":"30739",
-}
-3297=Person{
-     "id":"3297",
-     "firstName":"Damien",
-     "lastName":"Avila",
-"receivedMoney":"27076",
-     "sentMoney":"31124",
-}
-3130=Person{
-     "id":"3130",
-     "firstName":"Rosella",
-     "lastName":"Burks",
-"receivedMoney":"26918",
-     "sentMoney":"31348",
-}
+3544=Person[id='3544', firstName='Kimberly', lastName='Mullins', receivedMoney=26219, sentMoney=20675]
+3012=Person[id='3012', firstName='Adam', lastName='Grant', receivedMoney=22894, sentMoney=21496]
+1824=Person[id='1824', firstName='Kurtis', lastName='Head', receivedMoney=25498, sentMoney=23140]
+4580=Person[id='4580', firstName='Toby', lastName='Fernando', receivedMoney=22770, sentMoney=23323]
+2682=Person[id='2682', firstName='Jaime', lastName='Earline', receivedMoney=30615, sentMoney=23715]
+3958=Person[id='3958', firstName='Elba', lastName='Kaufman', receivedMoney=22764, sentMoney=23778]
+2426=Person[id='2426', firstName='Nellie', lastName='Brady', receivedMoney=31208, sentMoney=24002]
+3547=Person[id='3547', firstName='Robin', lastName='Olsen', receivedMoney=30085, sentMoney=24432]
+1625=Person[id='1625', firstName='Callie', lastName='Hawkins', receivedMoney=28685, sentMoney=24730]
+2146=Person[id='2146', firstName='Ezra', lastName='Sparks', receivedMoney=33555, sentMoney=24733]
+2755=Person[id='2755', firstName='Reba', lastName='Kendrick', receivedMoney=24268, sentMoney=25277]
+2254=Person[id='2254', firstName='Leila', lastName='Effie', receivedMoney=24108, sentMoney=25341]
+1567=Person[id='1567', firstName='Shannon', lastName='Banks', receivedMoney=29726, sentMoney=25382]
+2941=Person[id='2941', firstName='Heath', lastName='Brian', receivedMoney=24900, sentMoney=25576]
+2096=Person[id='2096', firstName='Lloyd', lastName='Chuck', receivedMoney=29987, sentMoney=25638]
+2895=Person[id='2895', firstName='Patrica', lastName='Garrison', receivedMoney=31764, sentMoney=26090]
+2389=Person[id='2389', firstName='Rose', lastName='Buckley', receivedMoney=29653, sentMoney=26157]
+3929=Person[id='3929', firstName='Jami', lastName='Berger', receivedMoney=22124, sentMoney=26185]
+2303=Person[id='2303', firstName='Sam', lastName='Quentin', receivedMoney=28325, sentMoney=26401]
+4539=Person[id='4539', firstName='Gilbert', lastName='Weiss', receivedMoney=23069, sentMoney=26555]
+3066=Person[id='3066', firstName='Cleo', lastName='Barnes', receivedMoney=23209, sentMoney=26577]
+2401=Person[id='2401', firstName='Elvin', lastName='Claude', receivedMoney=29276, sentMoney=26723]
+3095=Person[id='3095', firstName='Rich', lastName='Shields', receivedMoney=30223, sentMoney=26820]
+2383=Person[id='2383', firstName='Winnie', lastName='Page', receivedMoney=27775, sentMoney=27183]
+1089=Person[id='1089', firstName='Ladonna', lastName='Payne', receivedMoney=22431, sentMoney=27398]
+2217=Person[id='2217', firstName='Ruben', lastName='Katheryn', receivedMoney=21585, sentMoney=27452]
+1307=Person[id='1307', firstName='Andrea', lastName='Pate', receivedMoney=21744, sentMoney=27817]
+1538=Person[id='1538', firstName='Edgar', lastName='Moises', receivedMoney=25454, sentMoney=27953]
+2342=Person[id='2342', firstName='Liz', lastName='Austin', receivedMoney=28425, sentMoney=27985]
+4150=Person[id='4150', firstName='Angelina', lastName='Sims', receivedMoney=27929, sentMoney=28022]
+2948=Person[id='2948', firstName='Johnathan', lastName='Baxter', receivedMoney=25181, sentMoney=28118]
+2561=Person[id='2561', firstName='Antoine', lastName='Derek', receivedMoney=24173, sentMoney=28368]
+2070=Person[id='2070', firstName='Edmund', lastName='Mosley', receivedMoney=26798, sentMoney=28449]
+1699=Person[id='1699', firstName='Kathie', lastName='Stanton', receivedMoney=23538, sentMoney=28528]
+3112=Person[id='3112', firstName='Summer', lastName='Evelyn', receivedMoney=23887, sentMoney=29343]
+1968=Person[id='1968', firstName='Dianne', lastName='Michael', receivedMoney=30102, sentMoney=30168]
+2811=Person[id='2811', firstName='Florence', lastName='Deirdre', receivedMoney=30238, sentMoney=30737]
+3903=Person[id='3903', firstName='Ann', lastName='Dunlap', receivedMoney=25299, sentMoney=30739]
+3297=Person[id='3297', firstName='Damien', lastName='Avila', receivedMoney=27076, sentMoney=31124]
+3130=Person[id='3130', firstName='Rosella', lastName='Burks', receivedMoney=26918, sentMoney=31348]
