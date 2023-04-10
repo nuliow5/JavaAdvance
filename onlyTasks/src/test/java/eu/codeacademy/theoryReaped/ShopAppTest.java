@@ -104,21 +104,36 @@ public class ShopAppTest {
         myOrder.makeOrder(lidl, PURCHASE, map);
         int result = lidl.getProducts().get(0).getRemainder();
 
+        assertEquals(16, result);
 
     }
+    @Test
+    void sellThatHaveShop() throws Insufficient {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("07886659844", 2);
 
+        myOrder.makeOrder(lidl, SALE, map);
+
+        int result = lidl.getProducts().get(0).getRemainder();
+
+        assertEquals(4, result);
+
+    }
     @Test
     void sellMoreThatHaveShop() throws Insufficient {
         HashMap<String, Integer> map = new HashMap<>();
         map.put("07886659844", 10);
 
-        int result = lidl.getProducts().get(0).getRemainder();
 
 
+//        int result = lidl.getProducts().get(0).getRemainder();
+
+        Insufficient exception = assertThrows(Insufficient.class, () -> {
             myOrder.makeOrder(lidl, SALE, map);
+        });
 
+        assertEquals(exception.getMessage(), "We dont have so much this categero producrs");
 
-//        assertEquals(16, result);
 
     }
 }

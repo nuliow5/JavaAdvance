@@ -37,13 +37,13 @@ public class Order {
                         try {
                             shop.getProducts().get(i).addRemainder(countOfProduct);
                         } catch (Insufficient e) {
-                            throw new RuntimeException(e);
+                            System.out.println(e);
                         }
                     } else {
                         try {
                             shop.getProducts().get(i).removeRemainder(countOfProduct);
                         } catch (Insufficient e) {
-                            throw new RuntimeException(e);
+                            System.out.println("Error " + e);
                         }
                     }
 
