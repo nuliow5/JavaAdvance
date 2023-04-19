@@ -19,6 +19,8 @@
         <module>lambdas-streams</module>
         <module>generic-types</module>
         <module>onlyTasks</module>
+        <module>database</module>
+        <module>hibernate</module>
     </modules>
 
     <properties>
