@@ -1,22 +1,23 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<!DOCTYPE hibernate-configuration PUBLIC-->
-<!--        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
-<!--        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">-->
-<!--<hibernate-configuration>-->
-<!--    <session-factory>-->
-<!--        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>-->
-<!--        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/CA</property>-->
-<!--        <property name="hibernate.connection.username">postgres</property>-->
-<!--        <property name="hibernate.connection.password">postgres</property>-->
-<!--        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
-<!--        <property name="hibernate.connection.autocommit">true</property>-->
-<!--        &lt;!&ndash; Print executed SQL to stdout &ndash;&gt;-->
-<!--        <property name="show_sql">true</property>-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/regitra</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.autocommit">true</property>
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
 
-<!--        &lt;!&ndash; Update database on startup &ndash;&gt;-->
-<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        <!-- Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
-<!--        &lt;!&ndash; Annotated entity classes &ndash;&gt;-->
-<!--        <mapping class="eu.codeacademy.javaua2.model.Student"/>-->
-<!--    </session-factory>-->
-<!--</hibernate-configuration>-->
+        <!-- Annotated entity classes -->
+        <mapping class="eu.codeacademy.model.Person"/>
+        <mapping class="eu.codeacademy.model.University"/>
+    </session-factory>
+</hibernate-configuration>

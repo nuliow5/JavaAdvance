@@ -1,31 +1,52 @@
 package eu.codeacademy;
 
+import eu.codeacademy.model.University;
 import eu.codeacademy.service.RegitraService;
-
-import java.util.ArrayList;
+import eu.codeacademy.service.RegitraServiceWithHibernate;
+import eu.codeacademy.service.UniversityService;
+import org.hibernate.SessionFactory;
 
 public class App {
+    private static SessionFactory factory;
 
     public static void main(String[] args) {
         RegitraService regitraService = new RegitraService();
-        ArrayList persons = regitraService.findAllPersons();
-        System.out.println(persons);
+//        ArrayList persons = regitraService.findAllPersons();
+//        System.out.println(persons);
+//
+//        regitraService.findAllAuto();
+//
+//        regitraService.findPersonByCar("audi");
+//
+//        Person firstPerson = new Person(11,
+//                "Vadimas",
+//                "Gerasimovas",
+//                35);
+//
+////        regitraService.insertIntoNewPersonToSQL(firstPerson);
+//
+////        regitraService.updatePersonNameById(3, "Aaaa");
+//
+//        regitraService.moveAllFirstPersonCarsToSecondPerson("petras", "antanas");
 
-        regitraService.findAllAuto();
+        RegitraServiceWithHibernate regitraServiceWithHibernate = new RegitraServiceWithHibernate();
+//        regitraServiceWithHibernate.insertIntoPerson();
 
-        regitraService.findPersonByCar("audi");
+        University myUniversity = new University(null,
+                "VDU",
+                "1961");
 
-        Person firstPerson = new Person(11,
-                "Vadimas",
-                "Gerasimovas",
-                35);
+        UniversityService universityService = new UniversityService();
 
-//        regitraService.insertIntoNewPersonToSQL(firstPerson);
+//        universityService.createUniversity(myUniversity);
+//        universityService.showAllUniversity();
+//        regitraServiceWithHibernate.showAllPersons();
+//        universityService.updateUniversityName();
+//        universityService.selectUniversityById(1L);
+//        universityService.selectPersonByIdAnotherMethod(1L);
 
-//        regitraService.updatePersonNameById(3, "Aaaa");
-
-        regitraService.moveAllFirstPersonCarsToSecondPerson("petras", "antanas");
-
+        University university1 = new University(null, "UUUUU", "1111");
+        universityService.updateUniversityNameById(1L, university1);
 
     }
 }

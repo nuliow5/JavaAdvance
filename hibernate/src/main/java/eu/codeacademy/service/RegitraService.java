@@ -1,6 +1,6 @@
 package eu.codeacademy.service;
 
-import eu.codeacademy.Person;
+import eu.codeacademy.model.Person;
 import eu.codeacademy.util.JdbcUtil;
 
 import java.sql.*;
@@ -94,7 +94,7 @@ public class RegitraService {
             Connection conn = JdbcUtil.getConnection();
             PreparedStatement stmt = conn.prepareStatement(QUERY);
 
-            stmt.setInt(1, person.getId());
+            stmt.setInt(1, (int) person.getId());
             stmt.setString(2, person.getName());
             stmt.setString(3, person.getSurname());
             stmt.setInt(4, person.getAge());
