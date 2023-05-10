@@ -4,19 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringJoiner;
 
 @Entity
-@Table(name = "person")
+@Table(name = "student")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
-public class Person {
+public class Student {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -28,13 +22,11 @@ public class Person {
     @Column(name = "age", nullable = false)
     private int age;
 
+    @Column(name = "course", nullable = false)
+    private int course;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_contact_id")
     private StudentContact studentContact;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "university")
-    private University university;
-
 
 }

@@ -8,36 +8,36 @@ import java.util.ArrayList;
 
 
 public class RegitraService {
-    public ArrayList<Person> findAllPersons() {
-
-        String QUERY = "SELECT id, name, surname, age FROM person";
-        System.out.println("\n---" + QUERY + "---");
-        try (
-                Connection conn = JdbcUtil.getConnection();
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(QUERY);
-
-        ) {
-            ArrayList<Person> personList = new ArrayList<>();
-            while (rs.next()) {
-
-                personList.add(new Person(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("surname"),
-                        rs.getInt("age")
-                ));
-
-            }
-            return personList;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-        return null;
-    }
+//    public ArrayList<Person> findAllPersons() {
+//
+//        String QUERY = "SELECT id, name, surname, age FROM person";
+//        System.out.println("\n---" + QUERY + "---");
+//        try (
+//                Connection conn = JdbcUtil.getConnection();
+//                Statement stmt = conn.createStatement();
+//                ResultSet rs = stmt.executeQuery(QUERY);
+//
+//        ) {
+//            ArrayList<Person> personList = new ArrayList<>();
+//            while (rs.next()) {
+//
+//                personList.add(new Person(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("surname"),
+//                        rs.getInt("age")
+//                ));
+//
+//            }
+//            return personList;
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        return null;
+//    }
 
     public void findAllAuto() {
         String QUERY = "SELECT id, name, number FROM auto";

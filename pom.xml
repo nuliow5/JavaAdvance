@@ -21,6 +21,9 @@
         <module>onlyTasks</module>
         <module>database</module>
         <module>hibernate</module>
+        <module>hibernate2</module>
+        <module>hibernate-education</module>
+        <module>shop-database</module>
     </modules>
 
     <properties>

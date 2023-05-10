@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Table(name = "university")
 @NoArgsConstructor
@@ -25,9 +23,4 @@ public class University {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "rector_id")
     private Rector rector;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "university")
-    private List<Person> persons;
-
-
 }

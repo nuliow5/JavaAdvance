@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/regitra</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/education</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
@@ -14,10 +14,10 @@
         <property name="show_sql">true</property>
 
         <!-- Update database on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <!-- Annotated entity classes -->
-        <mapping class="eu.codeacademy.model.Person"/>
+        <mapping class="eu.codeacademy.model.Student"/>
         <mapping class="eu.codeacademy.model.University"/>
         <mapping class="eu.codeacademy.model.Rector"/>
         <mapping class="eu.codeacademy.model.StudentContact"/>

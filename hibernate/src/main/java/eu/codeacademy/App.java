@@ -1,5 +1,6 @@
 package eu.codeacademy;
 
+import eu.codeacademy.model.Rector;
 import eu.codeacademy.model.University;
 import eu.codeacademy.service.RegitraService;
 import eu.codeacademy.service.RegitraServiceWithHibernate;
@@ -32,11 +33,11 @@ public class App {
         RegitraServiceWithHibernate regitraServiceWithHibernate = new RegitraServiceWithHibernate();
 //        regitraServiceWithHibernate.insertIntoPerson();
 
-        University myUniversity = new University(null,
-                "VDU",
-                "1961");
-
-        UniversityService universityService = new UniversityService();
+//        University myUniversity = new University(null,
+//                "VDU",
+//                "1961");
+//
+//        UniversityService universityService = new UniversityService();
 
 //        universityService.createUniversity(myUniversity);
 //        universityService.showAllUniversity();
@@ -44,9 +45,17 @@ public class App {
 //        universityService.updateUniversityName();
 //        universityService.selectUniversityById(1L);
 //        universityService.selectPersonByIdAnotherMethod(1L);
+//
+//        University university1 = new University(null, "UUUUU", "1111");
+//        universityService.updateUniversityNameById(1L, university1);
 
-        University university1 = new University(null, "UUUUU", "1111");
-        universityService.updateUniversityNameById(1L, university1);
+        Rector rector = new Rector();
+        rector.setAge(60);
+        rector.setName("Rektorius");
+        rector.setSurname("Pavardenis");
+
+//        University university = new University(null, "VGDULT", 2023, rector);
+
 
     }
 }

@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color: #5B5E51;
+}
+
+#main {
+    /*padding: 350px;*/
+    margin: 50px;
+    background-color: #ffffff;
+}
+
+main{
+    border: 10px solid #3A3F2C;
+}
+
+
+
+a:link {
+    color: #aabc77;
+}
+
+/* visited link */
+a:visited {
+    color: #697743;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FFF;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+ul.nav {
+
+    padding-left: 0px;
+    background-color: #5B5E51;
+    text-align: center;
+    float: right;
+    padding-right: 20px;
+}
+
+ul.nav > li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+ul.nav > li:hover {
+    background-color: #3A3F2C;
+}
+
+ul.nav > li > a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.html_fun {
+
+    width: auto;
+    text-align: center;
+    padding: 15px;
+    border-color: #3A3F2C;
+    border-style: solid;
+    border-width: 10px;
+
+}
+
+.fun {
+    max-width: 500px;
+    height: auto;
+}
+
+.img_content {
+    text-align: center;
+}
+
+.content {
+    width: auto;
+
+    padding: 15px;
+    border-color: #3A3F2C;
+    border-style: solid;
+    border-width: 10px;
+    padding-left: 20px;
+}
+
+.contacts {
+    background-color: #3A3F2C;
+    font-size: small;
+    color: white;
+    padding-left: 20px;
+}
+
+.contacts > a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.contacts_head {
+    color: #aabc77;
+}
+
+.search_stile {
+    margin: auto;
+    width: 250px;
+    background-color: #5B5E51;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.lorem_content {
+    padding: 10px;
+    max-width: 500px;
+    background-color: #c3c5bc;
+    border-radius: 10px;
+    float: left;
+
+}
+
+.ul_content {
+    padding: 10px;
+    max-width: 500px;
+    min-width: 400px;
+    background-color: #c3c5bc;
+    border-radius: 10px;
+    float: right;
+    padding-left: 40px;
+}
+
+.top_content {
+    min-height: 300px;
+}
+
+/*.lithuania, .deutschland{*/
+/*    min-width: 100px;*/
+/*}*/
+.red{
+    background-color: red;
+}
+.flags{
+    margin: auto;
+    max-width: 700px;
+    min-height: 300px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: 5px solid;
+
+}
+div{
+
+    min-height: 50px;
+}
+
+.lithuania{
+    margin: auto;
+    float:left;
+    width:33%;
+    background-color: #3A3F2C;
+
+}
+
+.deutschland{
+    padding-left: 10px;
+    float:left;
+    width:31%;
+
+}
+
+.poland{
+    padding-left: 10px;
+    float:left;
+    width:33%;
+
+
+}
+
+header{
+    /*border: 3px solid;*/
+    height: 43px;
+    background-color: #5B5E51;
+}
+
+.logo{
+    width: 200px;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.main_content{
+    margin: auto;
+    width: 95%;
+    display: flex;
+    text-align: center;
+    background-color: #c2c4c1;
+    margin-top: 20px;
+
+    border-radius: 15px;
+    min-height: 150px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+
+}
+
+.content_superHeader{
+    padding: 20px;
+    margin: auto;
+    width: 60%;
+
+}
+
+.headline_content{
+    width: 60%;
+    float:left;
+    text-align: left;
+    /*margin: fill;*/
+    padding: 20px;
+}
+.headline_img{
+    display: flex;
+    float:left;
+    width:40%;
+    vertical-align: bottom;
+
+
+}
+.java_img{
+    margin: auto;
+    width: 250px;
+    border: 5px solid #FFFFFF;
+
+}
+
+
+.headline2_content{
+    width: 60%;
+    float:left;
+    text-align: left;
+    /*margin: fill;*/
+    padding: 20px;
+}
+.headline2_img{
+    display: flex;
+    float:left;
+    width:40%;
+    vertical-align: bottom;
+
+}
+
+.content_left{
+    width: 50%;
+    float:left;
+    padding: 20px;
+
+}
+
+.content_right{
+    width: 50%;
+    float:left;
+    padding: 20px;
+}
+
+
+
+
+.javaBlack_img{
+    margin: auto;
+    width: 100px;
+    border: 5px solid #FFFFFF;
+}
+
+.galery{
+    display: inline;
+    padding: 20px;
+    margin: auto;
+    max-width: 700px;
+    min-height: 300px;
+    text-align: center;
+}
+
+.galery_left{
+    margin: auto;
+    float:left;
+    width:30%;
+
+}
+
+.galery_center{
+    float:left;
+    width:31%;
+}
+
+.galery_right{
+    float:left;
+    width:31%;
+}
+
+.galery_level{
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.java0_img{
+    width: 100%;
+}
+
+.right_content_bottom{
+    text-align: left;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
