@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+header{
+    display: flex;
+    height: 8rem;
+    background-color: #000000;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffff;
+}
+
+.logo{
+    font-size: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+ul.nav {
+    padding-left: 0px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+ul.nav > li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+ul.nav > li:hover {
+    background-color: #0b6f80;
+}
+
+ul.nav > li > a {
+    color: #ffff;
+    text-decoration: none;
+
+}
+
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    background-color: white;
+
+}
+footer{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 8rem;
+    background-color: #504f4f;
+    color: #FFFF;
+    margin-top: auto;
+    bottom: 0;
+}
+
+.d-flex{
+    border: 2px solid;
+    background-color: #e0dcdc;
+    border-radius: 10px;
+}
+
+.inputAction{
+    display: flex;
+    border: 1px solid;
+    justify-content: center;
+    height: 200px;
+}
+
+.myButton{
+    position: relative;
+    transition: .5s;
+    background-color: #278628;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    animation-name: moving;
+    animation-duration: 10s;
+
+
+}
+
+@keyframes moving {
+    0%   {left:0px; top:0px;}
+    100%  {left:500px; top:0px;}
+}
+
+@keyframes moving-left{
+    50%  {left:0px; top:0px;}
+}
+
+
+myButton:hover {
+    animation-name: moving-left;
+    animation-duration: 4s;
+    background-color: black;
+
+}
+
+.myButton:disabled,
+.myButton[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    animation-name: moving-left;
+    animation-duration: 4s;
+}
