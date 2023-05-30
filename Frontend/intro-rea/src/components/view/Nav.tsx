@@ -5,6 +5,7 @@ const Nav = () => {
                     <li><a href="/contacts">CONTACT</a></li>
                     <li><a href="/card">CARD</a></li>
                     <li><a href="/myForm">MY FORM</a></li>
+                    <li><a href="/training">TRAINING</a></li>
                 </ul>
             </nav>)
 }
