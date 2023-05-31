@@ -24,6 +24,7 @@
         <module>hibernate2</module>
         <module>hibernate-education</module>
         <module>shop-database</module>
+        <module>Spring-education/spring-di-firstLesson</module>
     </modules>
 
     <properties>

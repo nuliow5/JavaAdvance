@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 @Component
-public class InternalMarksDao implements MarksDao {
+public class InternalMarksDao implements MarksDao{
     @Override
     public List<Integer> getMarks() {
         //praktiskai turetu kreiptis i db, istraukia azymius ir t.t.
