@@ -5,11 +5,11 @@ const Training = () => {
     const [inputValue, setInputValue] = useState('');
 
     function increment() {
-        setLikes(likes + 1)
+        setLikes(likes + 1);
     }
 
     function decrement() {
-        setLikes(likes - 1)
+        setLikes(likes - 1);
     }
 
     function showInput(event: any) {

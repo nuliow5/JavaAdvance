@@ -1,35 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function CardExample() {
+function CardExample(props:any) {
     return (
-        <div className="d-flex justify-content-around">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="src/images/Java_0.jpg" />
-                <img src="..src/images/Java_0.jpg"/>
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
+        <div className={"card"}>
+           <div className={"post"}>
+               <div className={"post__content"}>
+                   {/*<strong>{props.post.id} {props.post.title}</strong>*/}
+                   <div>
+                       {props}
+                   </div>
+               </div>
+           </div>
+            <div className={"post__btns"}>
+                <button>press me</button>
+            </div>
 
-            {/*<Card style={{ width: '18rem' }}>*/}
-            {/*    <Card.Img variant="top" src="holder.js/100px180" />*/}
-            {/*    <Card.Body>*/}
-            {/*        <Placeholder as={Card.Title} animation="glow">*/}
-            {/*            <Placeholder xs={6} />*/}
-            {/*        </Placeholder>*/}
-            {/*        <Placeholder as={Card.Text} animation="glow">*/}
-            {/*            <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}*/}
-            {/*            <Placeholder xs={6} /> <Placeholder xs={8} />*/}
-            {/*        </Placeholder>*/}
-            {/*        <Placeholder.Button variant="primary" xs={6} />*/}
-            {/*    </Card.Body>*/}
-            {/*</Card>*/}
+
         </div>
     );
 }

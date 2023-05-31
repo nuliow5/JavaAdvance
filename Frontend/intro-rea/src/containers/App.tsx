@@ -8,6 +8,7 @@ import Cart from "../components/information/Cart";
 import MyForm from "../components/information/MyForm";
 import Nav from "../components/view/Nav";
 import Training from "../components/information/Training";
+import Pets from "../components/information/Pets";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/card" element={<Cart/>}/>
                     <Route path="/myForm" element={<MyForm/>}/>
                     <Route path="/training" element={<Training/>}/>
+                    <Route path="/pets" element={<Pets/>}/>
                 </Routes>
                 <Footer/>
             </div>
