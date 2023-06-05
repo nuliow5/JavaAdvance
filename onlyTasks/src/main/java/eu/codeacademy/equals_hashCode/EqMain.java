@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class EqMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Person person1 = new Person("Antanas", 16);
         Person person2 = new Person("Antanas", 16);
 
@@ -34,6 +34,16 @@ public class EqMain {
 
         System.out.println(personSet);
 
+        System.out.println("---clone----");
+
+        Person clonePerson = person1.clone();
+        System.out.println(person1.hashCode());
+        System.out.println(clonePerson.hashCode());
+        System.out.println(person1.equals(clonePerson));
+
+        System.out.println("---------------");
+
+        System.out.println(new Worker().sayHi());
 
 
     }

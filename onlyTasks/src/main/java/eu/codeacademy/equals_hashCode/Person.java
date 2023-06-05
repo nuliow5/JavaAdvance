@@ -16,6 +16,10 @@ public class Person {
     private int age;
 //    private String id;
 
+    public String sayHi(){
+        return "hello from " + name;
+    }
+
 
 
 //        if (this.name.equals(person.name) && (this.age == person.age)){
@@ -33,10 +37,22 @@ public class Person {
 //        return age == person.age && name.equals(person.name);
 //    }
 //
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(name, age);
+//    }
+
+
     @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 
-
+    @Override
+    protected Person clone() throws CloneNotSupportedException {
+        return new Person(name, age);
+    }
 }
