@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "db8c8cde-3723-4015-a4d3-f4d1d2d8f720",
+		"name": "rest-api-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27834885"
+	},
+	"item": [
+		{
+			"name": "students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"5\",\r\n    \"name\": \"Tomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/students",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "student added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Tomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jun 2023 16:29:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Tomas\",\n    \"lastName\": \"Tomaitis\",\n    \"age\": 55\n}"
+				},
+				{
+					"name": "bad request id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"aaaa\",\r\n    \"name\": \"Tomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jun 2023 16:31:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-06-08T16:31:24.445+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/students\"\n}"
+				}
+			]
+		},
+		{
+			"name": "put...",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 55,\r\n    \"name\": \"EditTomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/students/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"students",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/students/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"students",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "id of student"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "student by id found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "id of student"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jun 2023 16:42:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"name\": \"Petras\",\n    \"lastName\": \"Petraitis\",\n    \"age\": 45\n}"
+				}
+			]
+		},
+		{
+			"name": "cars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "car by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/cars/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 5,\r\n        \"name\": \"TestCar\",\r\n        \"engineSizeDisplacement\": 2222.0,\r\n        \"fuelType\": \"Diesel\",\r\n        \"weight\": 555.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "student added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Tomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jun 2023 16:29:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Tomas\",\n    \"lastName\": \"Tomaitis\",\n    \"age\": 55\n}"
+				},
+				{
+					"name": "bad request id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"aaaa\",\r\n    \"name\": \"Tomas\",\r\n    \"lastName\": \"Tomaitis\",\r\n    \"age\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jun 2023 16:31:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-06-08T16:31:24.445+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/students\"\n}"
+				}
+			]
+		},
+		{
+			"name": "car by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"QQQQQQQQQQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "car by id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"engineSizeDisplacement\": 9999.9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "car by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/cars/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081"
+		}
+	]
+}
