@@ -1,4 +1,4 @@
-package lt.codeacademy.restapiexample.entity;
+package lt.codeacademy.restapiexample.enums;
 
 public enum Fuel {
     Gasoline,

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lt.codeacademy.restapiexample.enums.Fuel;
 
 @AllArgsConstructor
 @NoArgsConstructor

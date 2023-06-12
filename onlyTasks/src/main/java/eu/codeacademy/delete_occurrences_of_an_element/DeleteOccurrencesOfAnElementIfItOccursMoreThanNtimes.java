@@ -1,7 +1,5 @@
 package eu.codeacademy.delete_occurrences_of_an_element;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /*
 Task
@@ -12,15 +10,14 @@ https://www.codewars.com/kata/554ca54ffa7d91b236000023/train/java
  */
 public class DeleteOccurrencesOfAnElementIfItOccursMoreThanNtimes {
     public static void main(String[] args) {
-        int[] testArray = {1, 2, 3, 1, 2, 1, 2, 3};
+        int[] testArray = {1, 2, 3, 1, 1, 2, 1, 2, 3, 3, 2, 4, 5, 3, 1};
 
-        System.out.println(Arrays.toString(deleteNth(testArray,2)));
+        System.out.println(Arrays.toString(deleteNth2(testArray,1)));
 
     }
 
     public static int[] deleteNth(int[] elements, int maxOccurrences) {
         int[] countList = new int[elements.length];
-
         List<Integer> temp = new ArrayList<>();
 
         for (int i = 0; i < elements.length; i++) {
@@ -36,5 +33,34 @@ public class DeleteOccurrencesOfAnElementIfItOccursMoreThanNtimes {
 
         return result;
     }
+
+    public static int[] deleteNth2(int[] elements, int maxOccurrences) {
+        int[] countList = new int[elements.length-1];
+        String temp = "";
+
+        for (int i = 0; i < elements.length; i++) {
+            if (countList[elements[i]] < maxOccurrences){
+                temp += elements[i];
+            }
+            countList[elements[i]]++;
+        }
+
+        int[] result = new int[temp.length()];
+        for (int i = 0; i < temp.length(); i++) {
+            result[i] = Character.digit(temp.charAt(i), 10);
+        }
+
+        return result;
+    }
+
+    public static int[] deleteNth3(int[] elements, int maxOccurrences) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < elements.length; i++) {
+
+        }
+        return null;
+    }
+
 
 }
