@@ -27,6 +27,7 @@
         <module>Spring-education/spring-di-firstLesson</module>
         <module>spring-demo</module>
         <module>rest-api-example</module>
+        <module>social-media-REST-API</module>
     </modules>
 
     <properties>
