@@ -1,6 +1,6 @@
-package lt.codeacademy.restapiexample.service;
+package lt.codeacademy.restapiexample.services;
 
-import lt.codeacademy.restapiexample.entity.Car;
+import lt.codeacademy.restapiexample.entities.Car;
 import lt.codeacademy.restapiexample.enums.Fuel;
 import org.springframework.stereotype.Service;
 

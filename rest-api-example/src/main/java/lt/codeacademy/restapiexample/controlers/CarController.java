@@ -1,7 +1,7 @@
-package lt.codeacademy.restapiexample.controler;
+package lt.codeacademy.restapiexample.controlers;
 
-import lt.codeacademy.restapiexample.entity.Car;
-import lt.codeacademy.restapiexample.service.CarService;
+import lt.codeacademy.restapiexample.entities.Car;
+import lt.codeacademy.restapiexample.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

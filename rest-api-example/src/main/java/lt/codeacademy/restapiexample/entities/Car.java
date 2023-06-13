@@ -1,4 +1,4 @@
-package lt.codeacademy.restapiexample.entity;
+package lt.codeacademy.restapiexample.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
