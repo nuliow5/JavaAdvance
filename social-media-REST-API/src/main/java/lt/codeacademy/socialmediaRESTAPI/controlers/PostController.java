@@ -20,27 +20,63 @@ public class PostController {
 
     @Autowired
     PostService postService;
+
     @GetMapping
-    public List<Post> getAllPosts(){
+    public List<Post> getAllPosts() {
         return postService.getAllPosts();
     }
 
     @GetMapping("/{id}")
-    public Post getPostById(@PathVariable long id){
+    public Post getPostById(@PathVariable long id) {
         return this.postService.getPostById(id);
     }
-    @PostMapping
-    public Post createPost(@RequestBody long id){
-        return postService.createPost(id);
-    }
 
-    @PostMapping("/{id}")
-    public Post addComment(@PathVariable long id, @RequestBody CreateCommentDTO createCommentDTO){
-        try{
+//    @PostMapping("/create")
+//    public Post createPost(@RequestBody long authorId, String title, String body) {
+//        return postService.createPost(authorId, title, body);
+//    }
+//    @PostMapping("/create")
+//    public Post createPost(){
+//        return postService.createPost();
+//    }
+
+    @PostMapping("/comment/{id}")
+    public Post addComment(@PathVariable long id, @RequestBody CreateCommentDTO createCommentDTO) {
+        try {
             return postService.addComment(id, createCommentDTO);
-        } catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
 
     }
+
+    @DeleteMapping("{id}")
+    public Post deletePost(@PathVariable long postId) {
+        try {
+            return postService.deletePost(postId);
+        } catch (NoSuchElementException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+
+    }
+
+    @PatchMapping("{id}")
+    public Post editPost(@PathVariable long postId, @RequestBody long authorId, String newTitle, String newMessage) {
+        try {
+            return postService.editPost(postId, authorId, newTitle, newMessage);
+        } catch (NoSuchElementException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/comments/{id}")
+    public Post deleteCommentsFromMyPost(@PathVariable long postId, @RequestBody long authorId, long commentsId) {
+        try {
+            return postService.deleteCommentsFromMyPost(postId, authorId, commentsId);
+        } catch (NoSuchElementException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
+    }
+
+
 }

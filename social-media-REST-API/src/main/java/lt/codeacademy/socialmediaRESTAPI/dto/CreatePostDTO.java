@@ -7,8 +7,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CreateCommentDTO {
+public class CreatePostDTO {
     private Long authorId;
+    private String title;
     private String message;
 
 }
