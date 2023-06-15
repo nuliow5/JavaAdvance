@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lt.codeacademy.socialmediaRESTAPI.dto.UserDTO;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,5 +31,16 @@ public class User {
         this.email = email;
         this.createdUser = LocalDateTime.now();
         idIncrementor++;
+    }
+
+    public User(User oldUser, UserDTO newUser){
+        this.id = oldUser.getId();
+        this.nickName = newUser.nickName();
+        this.name = newUser.name();
+        this.surName = newUser.surName();
+        this.birthDate = oldUser.getBirthDate();
+        this.email = oldUser.getEmail();
+        this.createdUser = oldUser.getCreatedUser();
+
     }
 }

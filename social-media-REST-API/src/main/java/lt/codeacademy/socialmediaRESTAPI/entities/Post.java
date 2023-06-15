@@ -13,7 +13,7 @@ public class Post {
     private Long id;
     private User author;
     private String title;
-    private String body;
+    private String message;
     private List<Comment> comments = new ArrayList<>();
     private LocalDate createdAt;
     private static Long idIncrementor = 1L;
@@ -22,7 +22,7 @@ public class Post {
         this.id = idIncrementor;
         this.author = created;
         this.title = title;
-        this.body = body;
+        this.message = body;
         this.createdAt = LocalDate.now();
         idIncrementor++;
     }
