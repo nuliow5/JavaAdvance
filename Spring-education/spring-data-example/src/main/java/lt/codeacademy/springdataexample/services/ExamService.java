@@ -20,12 +20,29 @@ public class ExamService {
         return examDTO;
     }
 
-    public Exam getExamById(Long examId) {
-        return this.examRepository.findById(examId).get();
+    public ExamDTO getExamById(Long examId) {
+        ExamDTO examDTO = ExamConverter.convertExamToExamDTO(this.examRepository.findById(examId).get());
+        return examDTO;
     }
 
     public List<ExamDTO> getAllExams() {
         List<Exam> examList = this.examRepository.findAll();
+        return ExamConverter.convertExamsToExamDTO(examList);
+    }
+
+    public ExamDTO updateExamById(Long id, ExamDTO examDTO) {
+        ExamDTO updatingExamDTO = getExamById(id);
+        updatingExamDTO.setId(examDTO.getId());
+        updatingExamDTO.setTitle(examDTO.getTitle());
+        updatingExamDTO.setQuestions(examDTO.getQuestions());
+
+        this.examRepository.saveAndFlush(ExamConverter.convertExamDTOToExam(updatingExamDTO));
+        return examDTO;
+    }
+
+    public List<ExamDTO> deleteEsamById(Long id){
+        List<Exam> examList = this.examRepository.findAll();
+        examList.remove(id);
         return ExamConverter.convertExamsToExamDTO(examList);
     }
 

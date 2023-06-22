@@ -1,6 +1,5 @@
 package lt.codeacademy.springdataexample.repositories;
 
-import lt.codeacademy.springdataexample.dto.ExamDTO;
 import lt.codeacademy.springdataexample.entities.Exam;
 import org.springframework.data.jpa.repository.JpaRepository;
 

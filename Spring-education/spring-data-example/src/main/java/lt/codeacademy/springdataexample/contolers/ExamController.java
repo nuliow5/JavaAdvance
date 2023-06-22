@@ -41,8 +41,27 @@ public class ExamController {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(ExamConverter.convertExamToExamDTO(examService.getExamById(id)));
+                .body(examService.getExamById(id));
     }
 
+    @PutMapping
+    @RequestMapping("/{id}")
+    public ResponseEntity<ExamDTO> updateExamById(@PathVariable Long id, ExamDTO examDTO){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(this.examService.updateExamById(id, examDTO));
+        } catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Exam by id:%s, not found", id));
+        }
+    }
+
+    @DeleteMapping
+    @RequestMapping("/{id}")
+    public List<ExamDTO> deleteEsamById(@PathVariable Long id){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(this.examService.deleteEsamById(id)).getBody();
+        } catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Exam by id:%s, not found", id));
+        }
+    }
 
 }
