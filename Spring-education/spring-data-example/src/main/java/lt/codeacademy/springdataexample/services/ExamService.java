@@ -30,20 +30,19 @@ public class ExamService {
         return ExamConverter.convertExamsToExamDTO(examList);
     }
 
-    public ExamDTO updateExamById(Long id, ExamDTO examDTO) {
-        ExamDTO updatingExamDTO = getExamById(id);
-        updatingExamDTO.setId(examDTO.getId());
-        updatingExamDTO.setTitle(examDTO.getTitle());
-        updatingExamDTO.setQuestions(examDTO.getQuestions());
-
-        this.examRepository.saveAndFlush(ExamConverter.convertExamDTOToExam(updatingExamDTO));
-        return examDTO;
+    public ExamDTO updateExam(ExamDTO examDTO) {
+        Exam exam = examRepository.findById(examDTO.getId()).orElseThrow();
+        exam.setTitle(examDTO.getTitle());
+        examRepository.save(exam);
+        return ExamConverter.convertExamToExamDTO(exam);
     }
 
-    public List<ExamDTO> deleteEsamById(Long id){
-        List<Exam> examList = this.examRepository.findAll();
-        examList.remove(id);
-        return ExamConverter.convertExamsToExamDTO(examList);
+    public void deleteExam(Long id){
+        if (examRepository.findById(id).isPresent()){
+            examRepository.deleteById(id);
+        }
+
+
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
 import java.util.NoSuchElementException;
 
 @RestController
@@ -14,6 +15,7 @@ import java.util.NoSuchElementException;
 public class QuestionController {
     @Autowired
     private QuestionService questionService;
+
     @PostMapping()
     public ResponseEntity<QuestionDTO> addExamQuestion(@RequestBody QuestionDTO questionDTO) {
         try {
@@ -24,4 +26,19 @@ public class QuestionController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Exam by ID: %s not found", questionDTO.getExamId()));
         }
     }
+
+    @PutMapping
+    public ResponseEntity<QuestionDTO> updateQuestion(@RequestBody QuestionDTO questionDTO) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(questionService.updateQuestion(questionDTO));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteQuestionById(@PathVariable Long id){
+        this.questionService.deleteQuestionById(id);
+        return ResponseEntity
+                .noContent().build();
+    }
+
 }
