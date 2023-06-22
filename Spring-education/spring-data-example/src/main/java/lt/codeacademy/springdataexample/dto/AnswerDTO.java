@@ -4,18 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lt.codeacademy.springdataexample.entities.Answer;
 
-import java.util.List;
-
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-public class QuestionDTO {
-    private Long id;
+public class AnswerDTO {
+    private long id;
     private String text;
-    private Long examId;
-    private List<AnswerDTO> answer;
+    private boolean isCorrect;
+    private Long questionId;
+
 
 }

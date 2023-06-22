@@ -20,6 +20,8 @@ public class ExamService {
         return examDTO;
     }
 
+
+
     public ExamDTO getExamById(Long examId) {
         ExamDTO examDTO = ExamConverter.convertExamToExamDTO(this.examRepository.findById(examId).get());
         return examDTO;

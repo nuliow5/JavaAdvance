@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -18,8 +19,31 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Column(nullable = false)
     private String text;
-    private boolean answer;
+
+    @Column(name = "is_correct")
+    private boolean isCorrect;
+    @ManyToOne
+    @JoinColumn(name = "question_id")
+    private Question question;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    void prePersist() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 
 
 }

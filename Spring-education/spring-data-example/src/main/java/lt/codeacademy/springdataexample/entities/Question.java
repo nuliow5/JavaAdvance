@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @ToString
 @Getter
@@ -23,6 +24,8 @@ public class Question {
 
     @ManyToOne
     private Exam exam;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Answer> answers;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

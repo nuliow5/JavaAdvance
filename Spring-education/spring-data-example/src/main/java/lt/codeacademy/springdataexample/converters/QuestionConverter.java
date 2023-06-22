@@ -19,6 +19,8 @@ public abstract class QuestionConverter {
                 questionDTO.setExamId(question.getExam().getId());
             }
 
+            questionDTO.setAnswer(AnswerConverter.convertAnswersToDTO(question.getAnswers()));
+
         }
         return questionDTO;
     }
