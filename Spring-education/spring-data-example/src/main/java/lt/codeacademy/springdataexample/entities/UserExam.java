@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "user_exam")
@@ -30,6 +30,14 @@ public class UserExam {
 
     private Double score;
 
+    @ManyToMany
+    @JoinTable(
+            name = "user_exams_answers",
+            joinColumns = @JoinColumn(name = "user_exam_id"),
+            inverseJoinColumns = @JoinColumn(name = "answer_id")
+    )
+    private List<Answer> answers;
+
     @Column(name = "create_at")
     private LocalDateTime createAt;
 
@@ -37,12 +45,12 @@ public class UserExam {
     private LocalDateTime updateAt;
 
     @PrePersist
-    void persist(){
+    void persist() {
         this.createAt = LocalDateTime.now();
     }
 
     @PreUpdate
-    void update(){
+    void update() {
         this.updateAt = LocalDateTime.now();
     }
 

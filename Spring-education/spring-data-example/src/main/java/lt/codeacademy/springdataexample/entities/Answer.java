@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table
@@ -27,6 +28,9 @@ public class Answer {
     private Boolean isCorrect;
     @ManyToOne
     private Question question;
+
+    @ManyToMany(mappedBy = "answers")
+    List<UserExam> userExams;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

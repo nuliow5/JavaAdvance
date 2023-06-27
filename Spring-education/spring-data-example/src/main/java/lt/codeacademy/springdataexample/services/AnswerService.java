@@ -8,7 +8,6 @@ import lt.codeacademy.springdataexample.entities.Answer;
 import lt.codeacademy.springdataexample.repositories.AnswerRepository;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -54,12 +53,22 @@ public class AnswerService {
     }
 
     public AnswerDTO updateAnswer (AnswerDTO answerDTO){
-        Answer updateAnswer = AnswerConverter.convertAnswerDtoToAnswer(answerDTO);
-        updateAnswer.setCreatedAt(answerRepository.findById(answerDTO.getId()).get().getCreatedAt());
+        /*
+        1. galime pasidaryti validacija, kad mums neleistu atsakymo priskirti kitam klausimui (editinam texta arba delete)
+            galime pasitreukti pati Answer objekta is db ir jam uzsetinti laukus.
+        2. arba uzsetinti
+        */
+
+        //1 budas
+        Answer updateAnswer = answerRepository.findById(answerDTO.getId()).orElseThrow();
+        updateAnswer.setText(answerDTO.getText());
+
+        //2 budas
+//        Answer updateAnswer = AnswerConverter.convertAnswerDtoToAnswer(answerDTO);
+//        updateAnswer.setCreatedAt(answerRepository.findById(answerDTO.getId()).get().getCreatedAt());
 
         answerRepository.save(updateAnswer);
         return answerDTO;
-
 
     }
 
