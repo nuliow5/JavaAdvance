@@ -51,8 +51,7 @@ public class ExamController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEsam(@PathVariable Long id) {
         this.examService.deleteExam(id);
-        return ResponseEntity
-                .noContent().build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
     }
 

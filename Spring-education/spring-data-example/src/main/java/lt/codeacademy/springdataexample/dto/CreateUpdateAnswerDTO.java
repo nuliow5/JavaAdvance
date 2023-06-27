@@ -5,14 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-public class AnswerDTO {
-    private Long id;
-    private String text;
-    private Long questionId;
+@AllArgsConstructor
+@NoArgsConstructor
+public class CreateUpdateAnswerDTO extends AnswerDTO{
 
-
+    private Boolean isCorrect;
 }

@@ -9,10 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AnswerDTO {
+public class UserExamDto {
     private Long id;
-    private String text;
-    private Long questionId;
-
-
+    private Long userId;
+    private Long examId;
+    private Double score;
 }

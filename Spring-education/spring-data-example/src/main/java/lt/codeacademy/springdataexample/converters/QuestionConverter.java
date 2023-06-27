@@ -8,37 +8,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class QuestionConverter {
+    public static Question convertQuestionDtoToQuestion(QuestionDTO questionDTO) {
+        Question question = null;
+        if(questionDTO != null) {
+            question = new Question();
+            question.setId(questionDTO.getId());
+            question.setText(questionDTO.getText());
+
+            if(questionDTO.getExamId() != null) {
+                Exam exam = new Exam();
+                exam.setId(questionDTO.getExamId());
+                question.setExam(exam);
+            }
+        }
+
+        return question;
+    }
+
     public static QuestionDTO convertQuestionToDTO(Question question) {
         QuestionDTO questionDTO = null;
         if (question != null) {
             questionDTO = new QuestionDTO();
             questionDTO.setId(question.getId());
             questionDTO.setText(question.getText());
+            questionDTO.setAnswers(AnswerConverter.convertAnswersToDto(question.getAnswers()));
 
-            if (question.getExam() != null){
+            if(question.getExam() != null) {
                 questionDTO.setExamId(question.getExam().getId());
             }
-
-            questionDTO.setAnswer(AnswerConverter.convertAnswersToDTO(question.getAnswers()));
-
         }
         return questionDTO;
-    }
-
-    public static Question convertQuestionToDTO(QuestionDTO questionDTO) {
-        Question question = null;
-        if (questionDTO != null){
-            question = new Question();
-            question.setId(question.getId());
-            question.setText(questionDTO.getText());
-
-            if (questionDTO.getExamId() != null){
-                Exam exam = new Exam();
-                exam.setId(questionDTO.getExamId());
-            }
-
-        }
-        return question;
     }
 
     public static List<QuestionDTO> convertQuestionsToDTO(List<Question> questionList) {

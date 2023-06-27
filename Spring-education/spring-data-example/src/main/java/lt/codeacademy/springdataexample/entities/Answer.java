@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 public class Answer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -24,9 +24,8 @@ public class Answer {
     private String text;
 
     @Column(name = "is_correct")
-    private boolean isCorrect;
+    private Boolean isCorrect;
     @ManyToOne
-    @JoinColumn(name = "question_id")
     private Question question;
 
     @Column(name = "created_at")
@@ -43,6 +42,7 @@ public class Answer {
     @PreUpdate
     void preUpdate() {
         this.updatedAt = LocalDateTime.now();
+
     }
 
 

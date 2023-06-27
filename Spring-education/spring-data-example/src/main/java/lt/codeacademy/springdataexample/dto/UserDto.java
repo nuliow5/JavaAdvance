@@ -5,14 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class AnswerDTO {
+public class UserDto {
     private Long id;
-    private String text;
-    private Long questionId;
-
-
+    private String username;
+    private String name;
+    private String surname;
+    private List<UserExamDto> userExams;
 }

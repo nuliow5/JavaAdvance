@@ -7,20 +7,25 @@ import lt.codeacademy.springdataexample.entities.Question;
 import lt.codeacademy.springdataexample.repositories.QuestionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class QuestionService {
     private ExamService examService;
     private QuestionRepository questionRepository;
 
+    public List<QuestionDTO> getAllQuestions(){
+        List<Question> questions = this.questionRepository.findAll();
+        return QuestionConverter.convertQuestionsToDTO(questions);
+    }
     public QuestionDTO addQuestionToExam(QuestionDTO questionDTO) {
-//        Exam examById = this.examService.getExamById(examId);
-        Question question = QuestionConverter.convertQuestionToDTO(questionDTO);
-//        question.setExam(examById);
+        Question question = QuestionConverter.convertQuestionDtoToQuestion(questionDTO);
         this.questionRepository.saveAndFlush(question);
-        return questionDTO;
+        return QuestionConverter.convertQuestionToDTO(question);
     }
 
+    //?
     public QuestionDTO updateQuestion(QuestionDTO questionDTO){
         Question question = questionRepository.findById(questionDTO.getId()).orElseThrow();
         question.setText(questionDTO.getText());
@@ -31,6 +36,10 @@ public class QuestionService {
 
         questionRepository.save(question);
         return QuestionConverter.convertQuestionToDTO(question);
+    }
+
+    public QuestionDTO getQuestionById(Long id) {
+        return QuestionConverter.convertQuestionToDTO(questionRepository.getReferenceById(id));
     }
 
 

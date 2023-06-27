@@ -1,6 +1,7 @@
 package lt.codeacademy.springdataexample.converters;
 
 import lt.codeacademy.springdataexample.dto.AnswerDTO;
+import lt.codeacademy.springdataexample.dto.CreateUpdateAnswerDTO;
 import lt.codeacademy.springdataexample.entities.Answer;
 import lt.codeacademy.springdataexample.entities.Question;
 
@@ -9,45 +10,49 @@ import java.util.List;
 
 public abstract class AnswerConverter {
 
-    public static AnswerDTO convertAnswerToAnswerDTO(Answer answer){
-        AnswerDTO answerDTO = null;
-        if (answer != null){
-            answerDTO = new AnswerDTO();
-            answerDTO.setId(answer.getId());
-            answerDTO.setText(answer.getText());
-            answerDTO.setCorrect(answer.isCorrect());
-
-        }
-
-        return answerDTO;
-    }
-
-    public static Answer convertAnswerDTOToAnswer(AnswerDTO answerDTO){
+    public static Answer convertAnswerDtoToAnswer(AnswerDTO answerDto) {
         Answer answer = null;
-        if (answerDTO != null){
+        if(answerDto != null) {
             answer = new Answer();
-            answer.setId(answerDTO.getId());
-            answer.setText(answerDTO.getText());
-            answer.setCorrect(answerDTO.isCorrect());
+            answer.setId(answerDto.getId());
+            answer.setText(answerDto.getText());
 
-            if (answerDTO.getQuestionId() != null){
+            if(answerDto.getQuestionId() != null) {
                 Question question = new Question();
-                question.setId(answer.getId());
+                question.setId(answerDto.getQuestionId());
+                answer.setQuestion(question);
+            }
+
+            if(answerDto instanceof CreateUpdateAnswerDTO) {
+                answer.setIsCorrect(((CreateUpdateAnswerDTO) answerDto).getIsCorrect());
             }
         }
 
         return answer;
     }
 
-    public static List<AnswerDTO> convertAnswersToDTO(List<Answer> answers){
-        List<AnswerDTO> answerDTOList = null;
-        if (answers != null && !answerDTOList.isEmpty()){
-            answerDTOList = new ArrayList<>();
-            for (Answer a : answers){
-                answerDTOList.add(AnswerConverter.convertAnswerToAnswerDTO(a));
+    public static AnswerDTO convertAnswerToAnswerDto(Answer answer) {
+        AnswerDTO answerDto = null;
+        if (answer != null) {
+            answerDto = new AnswerDTO();
+            answerDto.setId(answer.getId());
+            answerDto.setText(answer.getText());
+
+            if(answer.getQuestion() != null) {
+                answerDto.setQuestionId(answer.getQuestion().getId());
             }
         }
+        return answerDto;
+    }
 
+    public static List<AnswerDTO> convertAnswersToDto(List<Answer> answersList) {
+        List<AnswerDTO> answerDTOList = null;
+        if (answersList != null && !answersList.isEmpty()) {
+            answerDTOList = new ArrayList<>();
+            for (Answer a : answersList) {
+                answerDTOList.add(convertAnswerToAnswerDto(a));
+            }
+        }
         return answerDTOList;
     }
 }
