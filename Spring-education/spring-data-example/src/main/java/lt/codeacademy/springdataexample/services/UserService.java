@@ -8,13 +8,15 @@ import lt.codeacademy.springdataexample.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+
 @Service
 @AllArgsConstructor
 public class UserService {
     private UserRepository userRepository;
 
     public UserDto getUserById(Long id) {
-        return UserConverter.convertUserToUserDto(userRepository.getReferenceById(id));
+        return UserConverter.convertUserToUserDto(userRepository.findById(id).orElseThrow(() -> new NoSuchElementException()));
     }
 
     public List<UserDto> getUsers() {

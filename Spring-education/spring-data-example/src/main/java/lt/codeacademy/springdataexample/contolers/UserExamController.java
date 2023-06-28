@@ -1,6 +1,7 @@
 package lt.codeacademy.springdataexample.contolers;
 
 import lombok.AllArgsConstructor;
+import lt.codeacademy.springdataexample.dto.HoldExamDto;
 import lt.codeacademy.springdataexample.dto.UserExamDto;
 import lt.codeacademy.springdataexample.entities.UserExam;
 import lt.codeacademy.springdataexample.services.UserExamService;
@@ -18,16 +19,23 @@ public class UserExamController {
     @Autowired
     private UserExamService userExamService;
 
-    @GetMapping
-    public List<UserExamDto> getAllUserExamDto(){
-        return this.userExamService.getAllUserExamDto();
-    }
+//    @GetMapping
+//    public List<UserExamDto> getAllUserExamDto(){
+//        return this.userExamService.getAllUserExamDto();
+//    }
+//
+//    @PostMapping
+//    public ResponseEntity<UserExamDto> addUserExam (@RequestBody UserExamDto userExamDto){
+//        return ResponseEntity
+//                .status(HttpStatus.CREATED)
+//                .body(this.userExamService.addUserExam(userExamDto));
+//    }
 
     @PostMapping
-    public ResponseEntity<UserExamDto> addUserExam (@RequestBody UserExamDto userExamDto){
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(this.userExamService.addUserExam(userExamDto));
+    public ResponseEntity<HoldExamDto> holdExam(@RequestBody HoldExamDto holdExamDto) {
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userExamService.holdExam(holdExamDto));
     }
 
 

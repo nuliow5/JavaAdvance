@@ -38,6 +38,10 @@ public class Answer {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    public Answer(Long id) {
+        this.id = id;
+    }
+
     @PrePersist
     void prePersist() {
         this.createdAt = LocalDateTime.now();

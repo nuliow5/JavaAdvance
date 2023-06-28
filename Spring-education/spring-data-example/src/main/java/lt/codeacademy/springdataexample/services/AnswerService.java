@@ -79,5 +79,9 @@ public class AnswerService {
         }
     }
 
+    public List<Answer> getAllAnswersByIds(List<Long> ids) {
+        return answerRepository.findAllById(ids);
+    }
+
 
 }
