@@ -8,4 +8,5 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
     @Query(value = "SELECT id from Exam WHERE title =: name")
     Long findByName(String name);
 
+
 }

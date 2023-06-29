@@ -18,8 +18,13 @@ public class StatisticsController {
     StatisticsService statisticsService;
 
     @GetMapping
-    public List<StatisticsDTO> getAllStatistic(@RequestParam(name ="examName", required = false) String examName){
-        return this.statisticsService.getAllStatistic(examName);
+    public List<StatisticsDTO> getAllStatistic(){
+        return this.statisticsService.getAllStatistics();
     }
+
+//    @GetMapping
+//    public List<StatisticsDTO> getAllStatistic(@RequestParam(name ="examName", required = false) String examName){
+//        return this.statisticsService.getAllStatistics();
+//    }
 
 }
