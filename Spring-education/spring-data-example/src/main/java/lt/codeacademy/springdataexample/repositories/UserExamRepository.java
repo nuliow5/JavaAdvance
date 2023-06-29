@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserExamRepository extends JpaRepository<UserExam, Long> {
-    @Query(value = "SELECT a FROM UserExam  a WHERE a.exam.id =:examId")
+    @Query(value = "SELECT a FROM UserExam a WHERE a.exam.id =:examId")
     List<StatisticsDTO> getAllStatistic(Long examId);
 
     @Query(value = "SELECT avg(score) from UserExam WHERE exam.id =:examId")

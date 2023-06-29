@@ -5,6 +5,7 @@ import lt.codeacademy.springdataexample.dto.StatisticsDTO;
 import lt.codeacademy.springdataexample.entities.Exam;
 import lt.codeacademy.springdataexample.repositories.ExamRepository;
 import lt.codeacademy.springdataexample.repositories.UserExamRepository;
+import lt.codeacademy.springdataexample.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class StatisticsService {
     private UserExamRepository userExamRepository;
 
     private ExamRepository examRepository;
+
+
 
 //    public List<StatisticsDTO> countHowManyTimeExamBySolved(String examName){
 //        long examId = this.examRepository.findByName(examName);
@@ -36,18 +39,17 @@ public class StatisticsService {
     }
 
     public StatisticsDTO getStatisticDTOFromExam(Exam exam){
-//        Double avgScore =  userExamRepository.averageScoreByExamId(exam.getId());
-//        System.out.println("avg = " + exam.getTitle() + " <> " + avgScore);
-//
-//        Integer count = userExamRepository.countSolvedExamById(exam.getId());
-//        System.out.println("count = " + exam.getTitle() + " <> " + count);
-//        return null;
-
         return new StatisticsDTO(
                 exam.getTitle(),
                 userExamRepository.averageScoreByExamId(exam.getId()),
                 userExamRepository.countSolvedExamById(exam.getId())
                 );
+    }
+
+    public StatisticsDTO getStatisticDTOByExamTitle(String examTitle){
+        Exam exam = examRepository.findExamByTitle(examTitle);
+        return getStatisticDTOFromExam(exam);
+
     }
 
 
