@@ -20,7 +20,7 @@ public class StatisticsController {
     StatisticsService statisticsService;
 
     @GetMapping
-    public List<StatisticsDTO> getAllStatistic(){
+    public List<StatisticsDTO> getAllStatistic() {
         return this.statisticsService.getAllStatistics();
     }
 
@@ -30,17 +30,17 @@ public class StatisticsController {
 //    }
 
 
-    @GetMapping("/{examTitle}")
-    public StatisticsDTO getStatisticDTOByExamTitle(@PathVariable String examTitle){
-   try {
-       return ResponseEntity.status(HttpStatus.OK)
-               .body(statisticsService.getStatisticDTOByExamTitle(examTitle)).getBody();
-
-   } catch (NoSuchElementException e){
-       throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-               String.format("Exam by title: %s not found", examTitle));
-   }
-
-    }
+//    @GetMapping("/{examTitle}")
+//    public StatisticsDTO getStatisticDTOByExamTitle(@PathVariable String examTitle) {
+//        try {
+//            return ResponseEntity.status(HttpStatus.OK)
+//                    .body(statisticsService.getStatisticDTOByExamTitle(examTitle)).getBody();
+//
+//        } catch (NoSuchElementException e) {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+//                    String.format("Exam by title: %s not found", examTitle));
+//        }
+//
+//    }
 
 }

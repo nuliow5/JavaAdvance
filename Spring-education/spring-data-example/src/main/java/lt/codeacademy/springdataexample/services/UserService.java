@@ -5,7 +5,9 @@ import lt.codeacademy.springdataexample.converters.UserConverter;
 import lt.codeacademy.springdataexample.dto.UserDto;
 import lt.codeacademy.springdataexample.entities.User;
 import lt.codeacademy.springdataexample.repositories.UserRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,7 +21,10 @@ public class UserService {
         return UserConverter.convertUserToUserDto(userRepository.findById(id).orElseThrow(() -> new NoSuchElementException()));
     }
 
-    public List<UserDto> getUsers() {
+    public List<UserDto> getUsers(Pageable pageable) {
+        if (pageable != null) {
+            return UserConverter.convertUserPageToUserDtoList(userRepository.findAll(pageable));
+        }
         return UserConverter.convertUserListToUserDtoList(userRepository.findAll());
     }
 

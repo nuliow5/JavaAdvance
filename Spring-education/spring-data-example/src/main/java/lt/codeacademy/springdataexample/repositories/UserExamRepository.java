@@ -18,4 +18,8 @@ public interface UserExamRepository extends JpaRepository<UserExam, Long> {
     //    @Query(value = "SELECT count(*) from user_exam WHERE exam_id =?1", nativeQuery = true)
     @Query(value = "SELECT count(*) from UserExam WHERE exam.id = :examId")
     Integer countSolvedExamById(@Param("examId") Long examId);
+
+    //trumpesnis budas, kaip galime resyti methodus
+    Integer countByExam_Id(Long id);
+
 }

@@ -2,15 +2,18 @@ package lt.codeacademy.springdataexample.contolers;
 
 
 import lt.codeacademy.springdataexample.dto.ExamDTO;
+import lt.codeacademy.springdataexample.enumes.DifficultyLevel;
 import lt.codeacademy.springdataexample.services.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.NoSuchElementException;
+
 
 @RestController
 @RequestMapping("/exams")
@@ -27,9 +30,17 @@ public class ExamController {
     }
 
     @GetMapping
-    public List<ExamDTO> getAllExams() {
-        return this.examService.getAllExams();
+    public ResponseEntity<List<ExamDTO>> getAllExams(@RequestParam(name = "difficultyLevel", required = false) DifficultyLevel difficultyLevel,
+                                                     @PageableDefault Pageable pageable) {
+        return ResponseEntity.ok(this.examService.getAllExams(difficultyLevel, pageable));
     }
+
+//    @GetMapping
+//    @RequestMapping("{/difficultyLevel}")
+//    public ResponseEntity<List<ExamDTO>> getExamsByDifficulty(@PathVariable String difficultyLevel,
+//                                                              @PageableDefault Pageable pageable){
+//        return ResponseEntity.ok(this.examService.findByDifficultyLevel(pageable, difficultyLevel));
+//    }
 
     @GetMapping
     @RequestMapping("/{id}")

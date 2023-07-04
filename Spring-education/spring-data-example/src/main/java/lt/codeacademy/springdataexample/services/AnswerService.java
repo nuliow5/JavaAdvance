@@ -6,7 +6,10 @@ import lt.codeacademy.springdataexample.dto.AnswerDTO;
 import lt.codeacademy.springdataexample.dto.QuestionDTO;
 import lt.codeacademy.springdataexample.entities.Answer;
 import lt.codeacademy.springdataexample.repositories.AnswerRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -24,9 +27,15 @@ public class AnswerService {
         return answerDTO;
     }
 
-    public List<Answer> getAllAnswers() {
-        List<Answer> answers = this.answerRepository.findAll();
-        return answers;
+    public List<AnswerDTO> getAllAnswers(Boolean isCorrect, Pageable pageable) {
+        Page<Answer> answers;
+        if (isCorrect != null){
+            answers = answerRepository.findAllByIsCorrect(isCorrect, pageable);
+        } else {
+            answers = this.answerRepository.findAll(pageable);
+        }
+
+        return AnswerConverter.convertAnswersToDto(answers);
     }
 
     public AnswerDTO addAnswer(AnswerDTO answerDTO) throws NoSuchElementException {

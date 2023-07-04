@@ -14,6 +14,7 @@ public abstract class ExamConverter {
             examDTO = new ExamDTO();
             examDTO.setId(exam.getId());
             examDTO.setTitle(exam.getTitle());
+            examDTO.setDifficultyLevel(exam.getDifficultyLevel());
             examDTO.setQuestions(QuestionConverter.convertQuestionsToDTO(exam.getQuestions()));
         }
         return examDTO;
@@ -25,14 +26,15 @@ public abstract class ExamConverter {
             exam = new Exam();
             exam.setId(exam.getId());
             exam.setTitle(examDTO.getTitle());
+            exam.setDifficultyLevel(examDTO.getDifficultyLevel());
         }
 
         return exam;
     }
 
-    public static List<ExamDTO> convertExamsToExamDTO(List<Exam> examList) {
+    public static List<ExamDTO> convertExamsToExamDTO(Iterable<Exam> examList) {
         List<ExamDTO> examDTOList = null;
-        if (examList != null && !examList.isEmpty()) {
+        if (examList != null ) {
             examDTOList = new ArrayList<>();
             for (Exam e : examList) {
                 examDTOList.add(ExamConverter.convertExamToExamDTO(e));

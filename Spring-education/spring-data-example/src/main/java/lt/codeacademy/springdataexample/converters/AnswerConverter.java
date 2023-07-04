@@ -4,6 +4,7 @@ import lt.codeacademy.springdataexample.dto.AnswerDTO;
 import lt.codeacademy.springdataexample.dto.CreateUpdateAnswerDTO;
 import lt.codeacademy.springdataexample.entities.Answer;
 import lt.codeacademy.springdataexample.entities.Question;
+import org.springframework.data.domain.Page;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,9 +46,9 @@ public abstract class AnswerConverter {
         return answerDto;
     }
 
-    public static List<AnswerDTO> convertAnswersToDto(List<Answer> answersList) {
+    public static List<AnswerDTO> convertAnswersToDto(Iterable<Answer> answersList) {
         List<AnswerDTO> answerDTOList = null;
-        if (answersList != null && !answersList.isEmpty()) {
+        if (answersList != null) {
             answerDTOList = new ArrayList<>();
             for (Answer a : answersList) {
                 answerDTOList.add(convertAnswerToAnswerDto(a));
@@ -55,4 +56,18 @@ public abstract class AnswerConverter {
         }
         return answerDTOList;
     }
+
+    public static List<AnswerDTO> convertAnswerPageToAnswerDTOList(Page<Answer> answerPage){
+        List<AnswerDTO> answerDTOList = null;
+        if (answerPage != null && !answerPage.isEmpty()){
+            answerDTOList = new ArrayList<>();
+            for (Answer a : answerPage){
+                answerDTOList.add(convertAnswerToAnswerDto(a));
+            }
+        }
+
+        return answerDTOList;
+    }
+
+
 }
