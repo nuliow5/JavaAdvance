@@ -14,4 +14,5 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 
     Page<Exam> findAllByDifficultyLevel(DifficultyLevel difficultyLevel, Pageable pageable);
 
+
 }
