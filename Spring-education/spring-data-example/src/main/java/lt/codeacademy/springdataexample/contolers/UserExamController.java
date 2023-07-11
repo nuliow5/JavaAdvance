@@ -1,18 +1,18 @@
 package lt.codeacademy.springdataexample.contolers;
 
-import lombok.AllArgsConstructor;
 import lt.codeacademy.springdataexample.dto.HoldExamDto;
-import lt.codeacademy.springdataexample.dto.UserExamDto;
-import lt.codeacademy.springdataexample.entities.UserExam;
 import lt.codeacademy.springdataexample.services.UserExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
+@PreAuthorize("hasRole('TEACHER')")
 @RequestMapping("/UserExams")
 public class UserExamController {
 

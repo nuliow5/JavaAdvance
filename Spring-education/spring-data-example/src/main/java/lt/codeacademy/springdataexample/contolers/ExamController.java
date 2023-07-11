@@ -9,18 +9,27 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
+@CrossOrigin
 @RestController
+@PreAuthorize("hasRole('TEACHER','GUEST')")
+//@Secured("GUEST")
 @RequestMapping("/exams")
 public class ExamController {
     @Autowired
     private ExamService examService;
-
+    @RolesAllowed({"TEACHER"})
     @PostMapping
     public ResponseEntity<ExamDTO> addExam(@RequestBody ExamDTO examDTO) {
         return ResponseEntity
@@ -29,6 +38,8 @@ public class ExamController {
 
     }
 
+
+    @PreAuthorize("hasRole('TEACHER')")
     @GetMapping
     public ResponseEntity<List<ExamDTO>> getAllExams(@RequestParam(name = "difficultyLevel", required = false) DifficultyLevel difficultyLevel,
                                                      @PageableDefault Pageable pageable) {
@@ -41,14 +52,18 @@ public class ExamController {
 //                                                              @PageableDefault Pageable pageable){
 //        return ResponseEntity.ok(this.examService.findByDifficultyLevel(pageable, difficultyLevel));
 //    }
-
+//    @PreAuthorize("hasRole('TEACHER','GUEST')")
     @GetMapping
     @RequestMapping("/{id}")
     public ResponseEntity<ExamDTO> getExamById(@PathVariable Long id) {
+        try {
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(examService.getExamById(id));
+        } catch (NoSuchElementException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
 
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(examService.getExamById(id));
     }
 
     @PutMapping

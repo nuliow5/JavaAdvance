@@ -1,21 +1,37 @@
 package lt.codeacademy.springdataexample.services;
 
-import lombok.AllArgsConstructor;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import lt.codeacademy.springdataexample.converters.ExamConverter;
 import lt.codeacademy.springdataexample.dto.ExamDTO;
 import lt.codeacademy.springdataexample.entities.Exam;
 import lt.codeacademy.springdataexample.enumes.DifficultyLevel;
 import lt.codeacademy.springdataexample.repositories.ExamRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
+
+//@AllArgsConstructor
 @Service
+@RequiredArgsConstructor
+@Slf4j //loggeris
 public class ExamService {
+    @Value("${ca.test.value}")
+    String caTestValue;
+
+    @Autowired
     private ExamRepository examRepository;
+
+    private final MessageSource messageSource;
+
 
     public ExamDTO addExam(ExamDTO examDTO) {
         Exam newExam = ExamConverter.convertExamDTOToExam(examDTO);
@@ -26,7 +42,12 @@ public class ExamService {
 
     public ExamDTO getExamById(Long examId) {
         ExamDTO examDTO = ExamConverter.convertExamToExamDTO(this.examRepository.findById(examId).get());
+
+
+
         return examDTO;
+
+
     }
 
 //    public Exam getExamById(Long examId) {
@@ -40,7 +61,10 @@ public class ExamService {
         } else {
             examPage = this.examRepository.findAll(pageable);
         }
-
+        //test
+        System.out.println(caTestValue);
+        log.error(messageSource.getMessage("obj.not.fount", null, LocaleContextHolder.getLocale()));
+        //end test
         return ExamConverter.convertExamsToExamDTO(examPage);
     }
 
