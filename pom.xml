@@ -29,6 +29,7 @@
         <module>Spring-education/rest-api-example</module>
         <module>Spring-education/social-media-REST-API</module>
         <module>Spring-education/spring-data-example</module>
+        <module>Spring-education/rentCars</module>
 
     </modules>
 

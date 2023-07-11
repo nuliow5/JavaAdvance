@@ -17,4 +17,5 @@ public class UserDTOMapper implements Function<User, UserDTO> {
                 user.getSurName()
         );
     }
+
 }
